@@ -2,23 +2,16 @@ import React, { useState } from 'react';
 
 const Feedback = () => {
   const [star, setStar] = useState('0');
-  // const [starColour, setStarColour] = useState('grey')
 
   const handleStar = (e) => {
-    console.log(e)
-    console.log(e.target)
-    console.log(e.target.key)
-    console.log(e.target.value)
-    // setStar(...star)
-    setStar(4);
-    
+    setStar(4);   
   };
 
   return (
     <div class="container mt-4 mb-4">
       <form>
         <div class="mb-3 row">
-          <label for="inputName" class="col-sm-2 col-form-label">
+          <label for="inputName" class="col-sm-4 col-form-label">
             Name
           </label>
           <div class="col-sm-8">
@@ -26,7 +19,7 @@ const Feedback = () => {
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="inputEmail" class="col-sm-2 col-form-label">
+          <label for="inputEmail" class="col-sm-4 col-form-label">
             Email
           </label>
           <div class="col-sm-8">
@@ -34,7 +27,7 @@ const Feedback = () => {
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="inputEmail" class="col-sm-2 col-form-label">
+          <label for="inputEmail" class="col-sm-4 col-form-label">
             Feedback
           </label>
           <div class="col-sm-8">
@@ -42,26 +35,15 @@ const Feedback = () => {
           </div>
         </div>
         <div class="mb-3 row">
-          <label for="inputEmail" class="col-sm-2 col-form-label">
+          <label for="inputEmail" class="col-sm-4 col-form-label">
             Rating
           </label>
           <div class="col-sm-8 d-flex">
             {[...Array(5)].map((indexStar, index) => {
               index += 1;
               return (
-                //     star === 1 ?
-                //   <i class="fa fa-solid fa-star" value={index} onClick={handleStar}></i>
-                //   :
-                <i
-                  className={
-                    index <= star ? 'fa fa-solid fa-star' : 'fa fa-star-o'
-                  }
-                //   value={star}
-                  key={index}
-                  onClick={() => {
-                      setStar(index)
-                  }}
-                ></i>
+                <i className={index <= star ? "fa fa-solid fa-star" : "fa fa-star-o"} key={index}
+                  onClick={() => {setStar(index);}}></i>
               );
             })}
           </div>
