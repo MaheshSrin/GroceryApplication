@@ -1,4 +1,5 @@
-import ProductRange from "./Product/ProductRange"
+import ProductRange from "./Product/ProductRange";
+import Filter from "./Product/Filter";
 
 const Home = props => {
     const ProductData = [
@@ -55,7 +56,7 @@ const Home = props => {
         <div className="container">
             <div className="row">
                 <div className="col-md-3">
-
+                    <Filter />
                 </div>
                 <div className="col-md-9">
                     <ProductRange productData={ProductData}/>
