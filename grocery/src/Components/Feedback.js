@@ -5,7 +5,6 @@ const Feedback = () => {
   // const [starColour, setStarColour] = useState('grey')
 
   const handleStar = (e) => {
-    e.preventDefault();
     console.log(e)
     console.log(e.target)
     console.log(e.target.key)
@@ -57,9 +56,11 @@ const Feedback = () => {
                   className={
                     index <= star ? 'fa fa-solid fa-star' : 'fa fa-star-o'
                   }
-                  value={index}
+                //   value={star}
                   key={index}
-                  onClick={handleStar}
+                  onClick={() => {
+                      setStar(index)
+                  }}
                 ></i>
               );
             })}
