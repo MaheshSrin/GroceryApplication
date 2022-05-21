@@ -1,10 +1,10 @@
 const ProductCard = (props) => {
   return (
-    <div className="col-md-3 col-sm-6 mb-3 mt-3">
+    <div className="col-lg-3 col-md-4 col-sm-6 mb-3 mt-3">
       <div class="card">
-        <img class="card-img-top" alt="card" src="https://placeimg.com/640/480/tech" />
+        <img class="card-img-top" alt="card" src={props.imgSrc} />
         <div class="card-body">
-          <h5 class="card-title">{props.productTitle}</h5>
+          <strong class="card-title">{props.productTitle}</strong>
           <p>Price: INR {props.productPrice}</p>
           <p class="card-text">
             {props.productDescription}
